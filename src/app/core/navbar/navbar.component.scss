@@ -1,0 +1,62 @@
+@import "../../../assets/scss/color_palette.scss";
+
+@mixin themable($first, $second) {
+  #navbar {
+    .title {
+      width: 150px;
+      margin: auto;
+      text-align: center;
+      font-size: 20px;
+      .first {
+        color: $first;
+      }
+      .second {
+        color: $second;
+      }
+    }
+    .menu {
+      display: grid;
+      justify-content: right;
+      p-tabmenu::ng-deep {
+        display: flex;
+        align-items: flex-end;
+        .p-tabmenu {
+          // height: 100%;
+          .p-tabmenu-nav {
+            // height: 100%;
+            border: 0;
+            .p-tabmenuitem {
+              // height: 100%;
+              .p-menuitem-link {
+                // height: 100%;
+                border-color: rgb(255 255 255 / 0);
+                background: rgb(255 255 255 / 0);
+              }
+            }
+            .p-tabmenuitem.p-highlight {
+              .p-menuitem-link {
+                background: #ffffff;
+                border-color: #4caf50;
+                color: #4caf50;
+              }
+            }
+            .p-menuitem-link:not(.p-disabled):focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      width: 150px;
+      text-align: right;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+:host {
+  @include themable($dark-gray, $green);
+}
