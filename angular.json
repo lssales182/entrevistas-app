@@ -121,8 +121,13 @@
               "devServerTarget": "entrevistas-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "entrevistas-app"
 }
